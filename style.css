@@ -29,7 +29,7 @@
 }
 
 .logo-header {
-  padding: 10px 10px 50px 10px;
+  padding: 40px 10px 50px 10px;
 }
 
 nav ul{
@@ -42,7 +42,7 @@ ul a{
 
 ul li{
   float: left;
-  padding: 10px 0px 50px 0px;
+  padding: 40px 0px 50px 0px;
   width: 100px;
   text-align: center;
 
