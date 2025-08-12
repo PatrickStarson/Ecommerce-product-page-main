@@ -19,6 +19,36 @@
   padding: 0;
   text-decoration: none;
   font-family: "Kumbh", sans-serif;
+  border: none;
 }
 
 
+.logo-and-nav {
+  display: flex;
+  gap: 50px;
+}
+
+.logo-header {
+  padding: 10px 10px 50px 10px;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+ul a{
+  color: black;
+}
+
+ul li{
+  float: left;
+  padding: 10px 0px 50px 0px;
+  width: 100px;
+  text-align: center;
+
+}
+
+ul li:hover{
+border-bottom: 4px solid;
+border-color: var(--orange);
+}
