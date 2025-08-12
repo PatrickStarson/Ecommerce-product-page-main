@@ -1,5 +1,6 @@
 @import url(https://fonts.google.com/specimen/Kumbh+Sans);
 
+
 :root {
   /*Primary colors*/
   --orange: hsl(26, 100%, 55%);
@@ -20,6 +21,15 @@
   text-decoration: none;
   font-family: "Kumbh", sans-serif;
   border: none;
+}
+
+html{
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  width: 1440px;
 }
 
 header{
@@ -114,7 +124,7 @@ main{
   padding: 100px 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+  gap: 100px;
 }
 
 .product-image-container {
@@ -124,7 +134,7 @@ main{
 }
 
 .product-image-large img{
-  width: 700px;
+  width: 600px;
   border-radius: 20px;
 }
 
@@ -145,5 +155,9 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 700px;
+  max-width: 600px;
+}
+
+.product-description-and-action-buttons {
+  padding: 100px 0px;
 }
