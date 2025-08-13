@@ -80,13 +80,14 @@ header{
 .cart-container {
   background-color: var(--Light-grayish-blue);
   position: absolute;
-  width: 300px;
-  min-height: 200px;
-  translate: -50px 0px;
-  margin-top: 280px;
+  top: 10%; 
+  right: 10%; 
+  margin-top: 15px; 
+  width: 350px;
   border-radius: 10px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.249);
-  display: none;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .cart-title {
@@ -94,6 +95,7 @@ header{
   border-bottom: 1px solid rgba(0, 0, 0, 0.100);
 }
 
+/*Empty cart*/
 .cart {
   display: flex;
   justify-content: center;
@@ -103,7 +105,71 @@ header{
 
 .empty-cart-text {
   padding: 50px;
+  display: none;
 }
+
+
+/*Filled cart*/
+
+.cart {
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  padding: 20px;
+}
+
+.filled-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-image img{
+  width: 55px;
+  border-radius: 8px;
+}
+
+.item-name-and-price a{
+  color: var(--Grayish-blue);
+}
+
+.item-name-and-price p{
+  color: var(--Grayish-blue);
+  line-height: 1.6;
+}
+
+.item-name-and-price strong{
+  color: black;
+}
+
+.delete-btn{
+  height: 25px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.checkout-btn {
+background-color: var(--orange);
+width: 100%;
+height: 50px;
+font-weight: 700;
+border-radius: 8px;
+cursor: pointer;
+}
+
+
 
 
 
@@ -237,9 +303,7 @@ main{
 .action-buttons {
   display: grid;
   grid-template-columns: 1fr 2fr;
- 
   gap: 15px;
-
 }
 
 
