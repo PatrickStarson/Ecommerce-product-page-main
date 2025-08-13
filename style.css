@@ -167,6 +167,12 @@ height: 50px;
 font-weight: 700;
 border-radius: 8px;
 cursor: pointer;
+box-shadow: 2px 1px 1px var(--pale-orange);
+}
+
+.checkout-btn:active{
+  background-color: var(--pale-orange);
+  box-shadow: 2px 1px 1px var(--pale-orange);
 }
 
 
@@ -314,6 +320,7 @@ main{
   align-items: center;
   background-color: var(--Light-grayish-blue);
   border-radius: 6px;
+  box-shadow: 2px 1px 1px var(--grayish-blue);
 }
 
 .amount-picker button{
@@ -344,10 +351,12 @@ main{
   height: 55px;
   cursor: pointer;
   border-radius: 6px;
+  box-shadow: 2px 1px 1px var(--pale-orange);
 }
 
 .add-to-cart-btn:active{
   background-color: var(--pale-orange);
+  box-shadow: 2px 1px 1px var(--pale-orange);
 }
 
 .add-to-cart-btn p{
