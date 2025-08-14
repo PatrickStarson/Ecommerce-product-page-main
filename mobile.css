@@ -31,9 +31,41 @@ header{
   margin: 40px 10px 30px 10px;
 }
 
-nav ul{
+.close-menu-btn {
+  background-color: transparent;
+  align-self: flex-start;
+  margin: 20px;
+}
+
+nav{
+  
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
   display: none;
 }
+
+ul {
+  margin: 20px;
+}
+
+ ul li{
+  float: none;
+  padding: 10px 0px;
+  text-align: left;
+  font-weight: 700;
+ }
+
+ li a{
+  color: black;
+ }
+
 
 .cart-and-avatar {
   display: flex;
@@ -63,6 +95,7 @@ main {
 }
 
 .cart-container {
+  display: none;
   position: fixed;
   z-index: 1;
   margin-top: 10px;
@@ -169,4 +202,4 @@ margin-top: 10px;
 .add-to-cart-btn img{
   width: 20px;
 }
-}
+
