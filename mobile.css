@@ -188,9 +188,11 @@ margin-top: 10px;
 
 .amount-picker {
   border-radius: 10px;
+  width: 100%;
 }
 
 .add-to-cart-btn {
+  width: 100%;
   border-radius: 10px;
 }
 
