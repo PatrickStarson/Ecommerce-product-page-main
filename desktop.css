@@ -580,6 +580,7 @@ main {
   .add-to-cart-btn p {
     font-size: 16px;
     margin-top: 2px;
+    color: black;
   }
 
   .add-to-cart-btn img {
