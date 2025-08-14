@@ -201,10 +201,4 @@
   }
 }
 
-/* ✅ Wrap main content when screen ≤ 800px */
-@media (max-width: 800px) {
-  main {
-    flex-wrap: wrap;
-  }
- 
-}
+
