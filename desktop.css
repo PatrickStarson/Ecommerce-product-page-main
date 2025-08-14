@@ -204,7 +204,7 @@ ul li:hover {
   box-shadow: 2px 1px 1px var(--pale-orange);
 }
 
-.checkout-btn:active {
+.checkout-btn:hover {
   background-color: var(--pale-orange);
 }
 
@@ -344,7 +344,7 @@ main {
   border-radius: 6px;
 }
 
-.amount-picker button:active {
+.amount-picker button:hover {
   color: var(--pale-orange);
 }
 
@@ -365,7 +365,7 @@ main {
   box-shadow: 2px 1px 1px var(--pale-orange);
 }
 
-.add-to-cart-btn:active {
+.add-to-cart-btn:hover {
   background-color: var(--pale-orange);
 }
 
@@ -465,7 +465,7 @@ main {
     transition: all 0.3s ease;
   }
 
-  .avatar img:active {
+  .avatar img:hover {
     border: solid 2px var(--orange);
     border-radius: 50%;
   }
