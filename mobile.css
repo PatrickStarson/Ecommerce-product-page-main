@@ -1,0 +1,164 @@
+@media only screen and (max-width: 375px) {
+  body {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.100);
+  height: 70px;
+}
+
+.logo-and-nav{
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.menu-icon{
+  display: inline;
+  margin-right: 10px;
+}
+
+.logo-header {
+  margin: 40px 10px 30px 10px;
+}
+
+nav ul{
+  display: none;
+}
+
+.cart-and-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0px;
+}
+
+.avatar  img{
+  width: 30px;
+  border: solid 2px transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.avatar img:active {
+  border: solid 2px var(--orange);
+  border-radius: 50%;
+
+}
+
+main {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.cart-container {
+  display: none;
+}
+
+
+.product-image-container{
+  padding: 0;
+}
+
+.product-image-large img{
+  width: 375px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  padding: 0;
+}
+
+.slideshow-buttons {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 375px;
+  height: 300px;
+  padding: 130px 20px;
+}
+
+.slideshow-buttons img{
+  align-self: center;
+  width: 8px;
+}
+
+.previous-btn,
+.next-btn {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+border-radius: 50%;
+}
+
+
+.product-image-thumbnails{
+  display: none;
+}
+
+.product-description-and-action-buttons{
+  padding: 20px 20px 100px 20px;
+}
+
+.product-description-and-action-buttons {
+  gap: 20px;
+}
+
+.brand-name-link {
+  font-size: 12px;
+}
+
+.product-name {
+  font-size: 25px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.action-buttons {
+display: flex;
+flex-direction: column;
+margin-top: 10px;
+}
+
+.amount-picker button{
+  font-size: 22px;
+  font-weight: 700;
+  padding: 15px 15px;
+  border-radius: 10px;
+}
+
+.amount-picker {
+  border-radius: 10px;
+}
+
+.add-to-cart-btn {
+  border-radius: 10px;
+}
+
+.add-to-cart-btn p{
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.add-to-cart-btn img{
+  width: 20px;
+}
+}

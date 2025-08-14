@@ -11,7 +11,8 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="desktop.css" />
+    <link rel="stylesheet" href="mobile.css" />
 
     <title>Frontend Mentor | E-commerce product page</title>
 
@@ -30,7 +31,8 @@
     <header>
       <div class="logo-and-nav">
         <a href="" class="logo-header"
-          ><img src="images/logo.svg" alt="brand logo"
+          ><img src="images/icon-menu.svg" alt="menu icon" class="menu-icon" />
+          <img src="images/logo.svg" alt="brand logo"
         /></a>
         <nav>
           <ul>
@@ -82,9 +84,18 @@
     </header>
     <main>
       <div class="product-image-container">
-        <a href="" class="product-image-large"
-          ><img src="images/image-product-1.jpg" alt="product image"
+        <div class="slideshow-buttons">
+          <button class="previous-btn" id="previous-btn">
+            <img src="images/icon-previous.svg" alt="previous" />
+          </button>
+          <button class="next-btn" id="next-btn">
+            <img src="images/icon-next.svg" alt="next" />
+          </button>
+        </div>
+        <a href="" class="product-image-large">
+          <img src="images/image-product-1.jpg" alt="product image"
         /></a>
+
         <div class="product-image-thumbnails">
           <a href="#" class="product-image-thumbnail"
             ><img
@@ -120,9 +131,9 @@
         <div class="price-container">
           <div class="price">
             <p class="price-final">$125.00</p>
-            <p class="price-start">$250.00</p>
+            <div class="discount"><p>50%</p></div>
           </div>
-          <div class="discount"><p>50%</p></div>
+          <p class="price-start">$250.00</p>
         </div>
         <div class="action-buttons">
           <div class="amount-picker">
