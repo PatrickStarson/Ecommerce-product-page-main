@@ -248,10 +248,12 @@ main {
   border: 3px solid transparent;
 }
 
-.product-image-thumbnails img:hover {
+.product-image-thumbnail img:hover,
+.product-image-thumbnail img.active-thumbnail {
   border: 3px solid var(--orange);
   opacity: 0.7;
 }
+
 
 /* --- Slideshow --- */
   .slideshow-buttons {
