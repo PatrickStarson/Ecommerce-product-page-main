@@ -56,6 +56,22 @@ document.addEventListener('click', (e) => {
 })
 
 
-
 //Create a itemsAmount viable to store amount of items in the cart
-//Add event listeners to the - and + buttons, and make them change the number of items displayed and store the amount in the itemsAmount
+//Add event listeners to the - and + buttons, and make them change the number of items displayed in the amount container
+
+let itemsAmount = 0;
+const amountContainer = document.querySelector('#amount-container');
+const minusBtn = document.querySelector('#minus');
+const plusBtn = document.querySelector('#plus');
+
+minusBtn.addEventListener('click', () => {
+  if(itemsAmount > 0) {
+    itemsAmount -= 1;
+    amountContainer.textContent = itemsAmount;
+  } 
+});
+
+plusBtn.addEventListener('click', () => {
+    itemsAmount += 1;
+    amountContainer.textContent = itemsAmount;
+});
