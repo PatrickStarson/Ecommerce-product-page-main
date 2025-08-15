@@ -515,6 +515,7 @@ main {
     width: 375px;
     height: 300px;
     object-fit: cover;
+    object-position: 0px 0px;
     border-radius: 0;
     padding: 0;
   }
