@@ -2,10 +2,10 @@
    IMPORTS & VARIABLES
 ======================= */
 
-/* Google Font */
+/* --- Google Font --- */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-/* Color Variables */
+/* --- Color Variables --- */
 :root {
   /* Primary colors */
   --orange: hsl(26, 100%, 55%);
@@ -97,7 +97,7 @@ ul li:hover {
   padding: 20px 30px 30px 10px;
 }
 
-/* Avatar */
+/* --- Avatar --- */
 .avatar img {
   width: 54px;
   border: solid 4px transparent;
@@ -109,7 +109,7 @@ ul li:hover {
   border: solid 4px var(--orange);
 }
 
-/* Cart Icon */
+/* --- Cart Icon --- */
 .cart-icon-btn {
   width: 30px;
   height: 30px;
@@ -154,13 +154,13 @@ ul li:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Empty Cart */
+/* --- Empty Cart --- */
 .empty-cart-text {
   padding: 50px;
   display: none;
 }
 
-/* Filled Cart */
+/* --- Filled Cart --- */
 .filled-cart {
   display: flex;
   flex-direction: column;
@@ -262,27 +262,26 @@ main {
   opacity: 0.7;
 }
 
-
 /* --- Slideshow --- */
-  .slideshow-buttons {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    padding: 255px 20px;
-  }
+.slideshow-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  padding: 255px 20px;
+}
 
-  .slideshow-buttons img {
-    width: 8px;
-  }
+.slideshow-buttons img {
+  width: 8px;
+}
 
-  .previous-btn,
-  .next-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
+.previous-btn,
+.next-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
 /* --- Product Description --- */
 .product-description-and-action-buttons {
@@ -307,6 +306,7 @@ main {
   line-height: 1.6;
 }
 
+/* --- Price Info --- */
 .price-container {
   display: flex;
   flex-direction: column;
@@ -415,7 +415,7 @@ main {
   }
 }
 
-
+/* --- Mobile Styles (≤ 430px) --- */
 @media only screen and (max-width: 430px) {
   body {
     width: 375px;
@@ -618,8 +618,27 @@ main {
   }
 }
 
+/* =======================
+   MOBILE BUTTON FIXES
+======================= */
 
-.empty-cart-text {
-  padding: 50px;
-  display: none;
+/* --- Remove default iOS/Android tap highlight --- */
+button, 
+.add-to-cart-btn {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* --- Prevent buttons from staying active --- */
+.add-to-cart-btn:active,
+.amount-picker button:active {
+  background-color: inherit; /* keep original look */
+  transform: none;           /* stop bounce effect */
+  outline: none;
+  box-shadow: none;
+}
+
+/* --- Subtle press feedback for add-to-cart --- */
+.add-to-cart-btn:active {
+  filter: brightness(0.95);
 }

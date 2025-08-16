@@ -1,17 +1,15 @@
+// ===================== SLIDER =====================
 const previousBtn = document.querySelector('#previous-btn');
 const nextBtn = document.querySelector('#next-btn');
+const imageElement = document.querySelector('#product-image-large');
+const thumbnails = document.querySelectorAll('.product-image-thumbnail img');
+
 const slides = [
   "images/image-product-1.jpg",
   "images/image-product-2.jpg",
   "images/image-product-3.jpg",
   "images/image-product-4.jpg"
 ];
-
-const cart = [];
-
-const imageElement = document.querySelector('#product-image-large');
-
-const thumbnails = document.querySelectorAll('.product-image-thumbnail img');
 
 let currentIndex = 0;
 
@@ -33,7 +31,7 @@ nextBtn.addEventListener('click', () => {
 
 thumbnails.forEach((img, index) => {
   img.parentElement.addEventListener('click', e => {
-    e.preventDefault(); 
+    e.preventDefault();
     currentIndex = index;
     updateSlide();
   });
@@ -42,7 +40,7 @@ thumbnails.forEach((img, index) => {
 updateSlide();
 
 
-
+// ===================== CART TOGGLE =====================
 const cartContainer = document.querySelector('.cart-container');
 const cartIconBtn = document.querySelector('#cart-icon-btn');
 
@@ -52,64 +50,92 @@ cartIconBtn.addEventListener('click', (e) => {
 });
 
 document.addEventListener('click', (e) => {
-  if(!cartContainer.contains(e.target) && e.target !== cartIconBtn) {
+  if (!cartContainer.contains(e.target) && e.target !== cartIconBtn) {
     cartContainer.style.display = 'none';
   }
-})
+});
 
 
-
+// ===================== AMOUNT PICKER =====================
 let itemsAmount = 0;
 const amountContainer = document.querySelector('#amount-container');
 const minusBtn = document.querySelector('#minus');
 const plusBtn = document.querySelector('#plus');
 
+function updateAmountDisplay() {
+  amountContainer.textContent = itemsAmount;
+}
+
 minusBtn.addEventListener('click', () => {
-  if(itemsAmount > 0) {
-    itemsAmount -= 1;
-    amountContainer.textContent = itemsAmount;
-  } 
+  if (itemsAmount > 0) {
+    itemsAmount--;
+    updateAmountDisplay();
+  }
 });
 
 plusBtn.addEventListener('click', () => {
-    itemsAmount += 1;
-    amountContainer.textContent = itemsAmount;
+  itemsAmount++;
+  updateAmountDisplay();
 });
 
 
-//Add event listener to add to cart button. Make it add the item to the cart, add amount of items to the cart icon in the header and reset the amount picker to 0.
-
+// ===================== CART LOGIC =====================
 const addToCartBtn = document.querySelector('#add-to-cart-btn');
 const cartFilled = document.querySelector('.filled-cart');
 const cartEmpty = document.querySelector('.empty-cart-text');
-let price = 125.00;
+const cartIconAmount = document.querySelector('.amount-of-items-icon');
 
-addToCartBtn.addEventListener('click', () => {
-  document.querySelector('.amount-of-items-icon').textContent = itemsAmount;
+const PRODUCT = {
+  id: 1,
+  name: "Fall Limited Edition Sneakers",
+  price: 125.00,
+  img: "images/image-product-1-thumbnail.jpg"
+};
 
-  if (itemsAmount > 0) {
-    cartFilled.style.display = 'flex';
-    cartFilled.innerHTML = 
-          `<div class="item">
-            <a href="" class="item-image"
-              ><img
-                src="images/image-product-1-thumbnail.jpg"
-                alt="product image"
-            /></a>
-            <div class="item-name-and-price">
-              <a href="" class="item-name">Fall Limited Edition Sneakers</a>
-              <p class="item-total-price">
-                $${price} x ${itemsAmount} <strong>$${itemsAmount * price}</strong>
-              </p>
-            </div>
-            <button class="delete-btn">
-              <img src="images/icon-delete.svg" alt="delete icon" />
-            </button>
-          </div>`
-  } else {
+let cart = [];
+
+function renderCart() {
+  if (cart.length === 0) {
     cartFilled.style.display = 'none';
     cartEmpty.style.display = 'block';
+    cartIconAmount.textContent = '0';
+    return;
   }
-  amountContainer.textContent = 0;
-})
 
+  const item = cart[0]; // only one product type in this store
+  cartFilled.style.display = 'flex';
+  cartEmpty.style.display = 'none';
+  cartIconAmount.textContent = item.amount;
+
+  cartFilled.innerHTML = `
+    <div class="item">
+      <a href="#" class="item-image">
+        <img src="${item.img}" alt="product image"/>
+      </a>
+      <div class="item-name-and-price">
+        <a href="#" class="item-name">${item.name}</a>
+        <p class="item-total-price">
+          $${item.price} x ${item.amount} <strong>$${item.amount * item.price}</strong>
+        </p>
+      </div>
+      <button class="delete-btn">
+        <img src="images/icon-delete.svg" alt="delete icon" />
+      </button>
+    </div>
+  `;
+
+  // reattach delete button
+  cartFilled.querySelector('.delete-btn').addEventListener('click', () => {
+    cart = [];
+    renderCart();
+  });
+}
+
+addToCartBtn.addEventListener('click', () => {
+  if (itemsAmount > 0) {
+    cart = [{ ...PRODUCT, amount: itemsAmount }];
+    renderCart();
+    itemsAmount = 0;
+    updateAmountDisplay();
+  }
+});
