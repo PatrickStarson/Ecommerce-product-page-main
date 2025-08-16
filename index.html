@@ -3,36 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
+    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>Frontend Mentor | E-commerce product page</title>
+    <title>E-commerce product page</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      /* Attribution styles */
       .attribution {
         font-size: 11px;
         text-align: center;
       }
+
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
     </style>
   </head>
+
   <body>
+    <!-- Header -->
     <header>
       <div class="logo-and-nav">
-        <a href="" class="logo-header"
-          ><img src="images/icon-menu.svg" alt="menu icon" class="menu-icon" />
-          <img src="images/logo.svg" alt="brand logo"
-        /></a>
+        <a href="" class="logo-header">
+          <img src="images/icon-menu.svg" alt="menu icon" class="menu-icon" />
+          <img src="images/logo.svg" alt="brand logo" />
+        </a>
+
         <nav>
           <button class="close-menu-btn" id="close-menu-btn">
             <img src="images/icon-close.svg" alt="close menu" />
@@ -48,44 +54,57 @@
       </div>
 
       <div class="cart-and-avatar">
+        <!-- Cart Icon -->
         <button id="cart-icon-btn" class="cart-icon-btn">
           <img src="images/icon-cart.svg" alt="cart icon" />
           <div class="amount-of-items-icon">0</div>
         </button>
 
-        <a href="" id="avatar" class="avatar"
-          ><img src="images/image-avatar.png" alt="avatar"
-        /></a>
+        <!-- Avatar -->
+        <a href="" id="avatar" class="avatar">
+          <img src="images/image-avatar.png" alt="avatar" />
+        </a>
 
+        <!-- Cart Dropdown -->
         <div class="cart-container">
-          <div class="cart-title"><p>Cart</p></div>
+          <div class="cart-title">
+            <p>Cart</p>
+          </div>
+
           <div class="cart" id="cart">
             <p class="empty-cart-text">Your cart is empty.</p>
+
             <div class="filled-cart">
               <div class="item">
-                <a href="" class="item-image"
-                  ><img
+                <a href="" class="item-image">
+                  <img
                     src="images/image-product-1-thumbnail.jpg"
                     alt="product image"
-                /></a>
+                  />
+                </a>
+
                 <div class="item-name-and-price">
                   <a href="" class="item-name">Fall Limited Edition Sneakers</a>
                   <p class="item-total-price">
                     $125.00 x 3 <strong>$375.00</strong>
                   </p>
                 </div>
+
                 <button class="delete-btn">
                   <img src="images/icon-delete.svg" alt="delete icon" />
                 </button>
               </div>
             </div>
+
             <button class="checkout-btn">Checkout</button>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- Main Content -->
     <main>
+      <!-- Product Images -->
       <div class="product-image-container">
         <div class="slideshow-buttons">
           <button class="previous-btn" id="previous-btn">
@@ -95,37 +114,44 @@
             <img src="images/icon-next.svg" alt="next" />
           </button>
         </div>
+
         <a href="" class="product-image-large">
           <img
             id="product-image-large"
             src="images/image-product-1.jpg"
             alt="product image"
-        /></a>
+          />
+        </a>
 
         <div class="product-image-thumbnails">
-          <a href="#" class="product-image-thumbnail"
-            ><img
+          <a href="#" class="product-image-thumbnail">
+            <img
               src="images/image-product-1-thumbnail.jpg"
               alt="product image thumbnail"
-          /></a>
-          <a href="" class="product-image-thumbnail"
-            ><img
+            />
+          </a>
+          <a href="" class="product-image-thumbnail">
+            <img
               src="images/image-product-2-thumbnail.jpg"
               alt="product image thumbnail"
-          /></a>
-          <a href="" class="product-image-thumbnail"
-            ><img
+            />
+          </a>
+          <a href="" class="product-image-thumbnail">
+            <img
               src="images/image-product-3-thumbnail.jpg"
               alt="product image thumbnail"
-          /></a>
-          <a href="" class="product-image-thumbnail"
-            ><img
+            />
+          </a>
+          <a href="" class="product-image-thumbnail">
+            <img
               src="images/image-product-4-thumbnail.jpg"
               alt="product image thumbnail"
-          /></a>
+            />
+          </a>
         </div>
       </div>
 
+      <!-- Product Description & Actions -->
       <div class="product-description-and-action-buttons">
         <a href="" class="brand-name-link">SNEAKER COMPANY</a>
         <p class="product-name">Fall Limited Edition Sneakers</p>
@@ -134,19 +160,24 @@
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
+
         <div class="price-container">
           <div class="price">
             <p class="price-final">$125.00</p>
-            <div class="discount"><p>50%</p></div>
+            <div class="discount">
+              <p>50%</p>
+            </div>
           </div>
           <p class="price-start">$250.00</p>
         </div>
+
         <div class="action-buttons">
           <div class="amount-picker">
             <button id="minus" class="minus">-</button>
             <p class="amount-container" id="amount-container">0</p>
             <button id="plus" class="plus">+</button>
           </div>
+
           <button id="add-to-cart-btn" class="add-to-cart-btn">
             <img src="images/icon-cart.svg" alt="cart icon" />
             <p>Add to cart</p>
